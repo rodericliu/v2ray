@@ -6,7 +6,7 @@ SERVER_NAME=""
 YOUR_EMAIL=""
 
 if [ "`id -u -n`" != "root" ] ; then
-    echo "this should be run as root only, please switch to root user!
+    echo -e "this should be run as root only, please switch to root user by running [\e[0;32;1msudo bash\e[0m]"
     exit 1
 fi
 
@@ -105,4 +105,4 @@ systemctl start nginx
 wget --quiet "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
 chmod +x tcp.sh
 
-echo "Please execute tcp.sh and choose 2 to install BBR plus kernel. Reboot the system after that and execute tcp.sh again and choose 7 to enable the BBRplus acceleration"
+echo -e "Please execute [\e[0;32;1m./tcp.sh\e[0m] and choose [\e[0;32;1m2\e[0m] to install BBR plus kernel. Reboot the system after that and execute [\e[0;32;1m./tcp.sh\e[0m] again and choose [\e[0;32;1m7\e[0m] to enable the BBRplus acceleration"
