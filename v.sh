@@ -21,6 +21,8 @@ module_hotfixes=true
 EOF
 
 sed -i s#enforcing#disabled#g /etc/selinux/config
+systemctl disable firewalld
+systemctl stop firewalld
 
 yum -y install nginx certbot python2-certbot-nginx psmisc wget unzip >/dev/null 2>&1
 
